@@ -1,0 +1,72 @@
+Arguments: 
+  /usr/local/Cellar/node@14/14.16.1_1/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.16.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/shivamsoni/dev/stewardship-mapper/package.json: Unexpected token } in JSON at position 427
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "stewardship-mapper",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "@testing-library/jest-dom": "^5.11.4",
+      "@testing-library/react": "^11.1.0",
+      "@testing-library/user-event": "^12.1.10",
+      "evergreen-ui": "^6.0.1",
+      "react": "^17.0.2",
+      "react-dom": "^17.0.2",
+      "react-router": "^5.2.0",
+      "react-scripts": "4.0.3",
+      "typescript": "^4.3.4",
+      "web-vitals": "^1.0.1",
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "dev": "react-scripts start && react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest"
+      ]
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

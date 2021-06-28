@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Availability of reliable, quality and usable datasets",
+    "short": "Availability",
+    "description": "Reliable datasets build value for stakeholders – data stewards are critical to the data value chain as they make quality data available",
+    "options" : [
+      {
+        "name": "Single point of data access",
+        "points": 5
+      },
+      {
+        "name": "Define and implement formats and standards for storing and sharing data",
+        "points": 10
+      },
+      {
+        "name": "Purposes led standards for data sharing with a focus on protection",
+        "points": 15
+      }
+    ]
+  },
+  {
+    "name": "Data audits, ethics and assessment",
+    "short": "Audits",
+    "description": "Audit of data sharing practices is necessary to help stakeholders remain apprised of risks. Ensures a degree of transparency on the practices of stewards",
+    "options" : [
+      {
+        "name": "Self-assess internal practices, norms, security pertaining to data",
+        "points": 5
+      },
+      {
+        "name": "Engage external data auditor for periodic evaluation",
+        "points": 10
+      },
+      {
+        "name": "Conduct comprehensive audits by internal and external entities",
+        "points": 15
+      }
+    ]
+  },
+  {
+    "name": "Clear incentive structure",
+    "short": "Incentive",
+    "description": "While stewards are expected to work in the interest of users – incentives (monetary and otherwise) need to align to ensure there is no malpractice. Conflicting interests make beneficial data sharing near impossible.",
+    "options" : [
+      {
+        "name": "Vague commitment to public value and user agency",
+        "points": 5
+      },
+      {
+        "name": "Disclosure on funding and financial sustainability – highlight any possible conflicts",
+        "points": 10
+      },
+      {
+        "name": "Create alignment to interests of users with accountabilit",
+        "points": 15
+      }
+    ]
+  },
+  {
+    "name": "Accountability and grievance redressal",
+    "short": "Accountability",
+    "description": "An effective grievance redressal system is the most valuable feature for increasing trust in a steward - accessibility and usability of the process is key to achieving this",
+    "options" : [
+      {
+        "name": "Create of an office for grievance redressal",
+        "points": 5
+      },
+      {
+        "name": "Open channels of communication with end-users",
+        "points": 10
+      },
+      {
+        "name": "Consistent engagement and partnership with community – systematic grievance redressal process",
+        "points": 15
+      }
+    ]
+  },
+  {
+    "name": "Financial sustainability",
+    "short": "Finance",
+    "description": "Financial sustainability is key for the independence of the steward. Revenue models are experimental, and many stewards are at the stage of incubation rather than self-sustaining structures",
+    "options" : [
+      {
+        "name": "Data monetisation to sustain the data steward",
+        "points": 5
+      },
+      {
+        "name": "Data monetisation for public value e.g. selling data to municipalities for resource planning",
+        "points": 10
+      },
+      {
+        "name": "Membership based remuneration for stewards",
+        "points": 15
+      }
+    ]
+  },
+  {
+    "name": "Community-centered purpose",
+    "short": "Purpose",
+    "description": "Centering the community is a crucial touchstone for stewardship. Ensuring that community purpose translates to practices of the steward is important “good stewardship”",
+    "options" : [
+      {
+        "name": "Stated community purpose however, vague terms of representing user",
+        "points": 5
+      },
+      {
+        "name": "Stated community purpose with open channels of engagement with communities",
+        "points": 10
+      },
+      {
+        "name": "Active engagement with community members to define and translate their preference on societal benefits",
+        "points": 15
+      }
+    ]
+  }
+]
