@@ -1,29 +1,7 @@
 import React from 'react'
 import data from 'assets/data.json'
-
-class OptionButton extends React.Component {
-    getColor() {
-        const { option, isActive } = this.props
-        const def = `cursor-pointer shadow-lg py-4 px-6 w-full dark:bg-gray-700 relative rounded-lg text-sm`
-
-        switch(option.points) {
-            case 5: return `${def} ${ isActive ? `bg-red-300` : `bg-red-100 hover:bg-red-200 `}`;
-            case 10: return `${def} ${ isActive ? `bg-yellow-300` : `bg-yellow-100 hover:bg-yellow-200 `}`;
-            case 15: return `${def} ${ isActive ? `bg-green-300` : `bg-green-100 hover:bg-green-200 `}`;
-            default: return def
-        }
-    }
-    render() {
-        const { option, submitAnswer } = this.props
-        return (
-            <div className="w-full">
-                <div className={this.getColor()} onClick={() => submitAnswer()}>
-                    <p>{option.name}</p>
-                </div>
-            </div>
-        )
-    }
-}
+import OptionButton from './OptionButton';
+import { NotEnoughPointsError, CompleteAllOptionsError } from './Errors'
 
 class Formpage extends React.Component {
     state = {
@@ -34,17 +12,19 @@ class Formpage extends React.Component {
             "answered": false,
             "option_selected": 5
         }),
-        show_error: false
+        show_error: false,
+        not_enough_points_error: false,
+        select_all_error: false
     }
-    getCurrentPoints() {
+    async getCurrentPoints(new_steps) {
         let points = 0;
-        this.state.steps_taken.map((step, index) => {
-            if(step.answered) {
-                points += data[index].options[step.option_selected].points
+        new_steps.map((step, index) => {
+            if(step["answered"]) {
+                points += data[index].options[step["option_selected"]].points
             }
             return 0;
         })
-        this.setState({ acquired_points: points })
+        return points
     }
     getStepPoints(key) {
         const option = this.state.steps_taken[key]["option_selected"]
@@ -53,19 +33,22 @@ class Formpage extends React.Component {
     getState(key) {
         return `w-full flex items-center pl-6 p-1 mb-1 cursor-pointer transition-colors duration-200 justify-start border-l-4 ${key === this.state.current_step ? `border-blue-500 text-gray-800 dark:text-white` : `hover:text-gray-800 border-transparent text-gray-400`}`     
     }
-    answer(key) {
-        const new_steps_taken = this.state.steps_taken
-        const old_steps_taken = this.state.steps_taken
+    async answer(key) {
+        let new_steps_taken = [...this.state.steps_taken]
         new_steps_taken[this.state.current_step] = {
             "answered": true,
             "option_selected": key
         }
-        this.setState({ steps_taken: new_steps_taken });
-        this.getCurrentPoints();
-        if(this.state.available_points < this.state.acquired_points) {
-            console.log('error')
-            this.setState({ show_error: true, steps_taken: old_steps_taken })
-            setTimeout(this.setState({ show_error: false }), 3000)
+        const points = await this.getCurrentPoints(new_steps_taken)
+
+        if(this.state.available_points < points) {
+            this.setState({ show_error: true, not_enough_points: true })
+            setTimeout(() => {
+                this.setState({ show_error: false, not_enough_points: false })
+            }, 3000)
+        }
+        else {
+            this.setState({ steps_taken: new_steps_taken, acquired_points: points });
         }
     }
     changeState(key) {
@@ -73,17 +56,25 @@ class Formpage extends React.Component {
     }
     checkIfOptionIsActive(index) {
         const steps_taken = this.state.steps_taken
-        return steps_taken[this.state.current_step].option_selected === index
+        return steps_taken[this.state.current_step]["option_selected"] === index
     }
     formIsComplete() {
         let flag = true;
-        this.state.steps_taken.map((step, index) => {
-            if(step.answered === false) {
+        this.state.steps_taken.map(step => {
+            if(!step["answered"] && (this.state.available_points >= this.state.acquired_points) ) {
                 flag = false;
             }
             return 0;
         })
         return flag
+    }
+    getPath() {
+        let path = '/results/'
+        this.state.steps_taken.map(step => {
+            path = `${path}${step["option_selected"]}`
+            return;
+        })
+        return path
     }
     render() {
         return (
@@ -93,13 +84,8 @@ class Formpage extends React.Component {
                 {this.state.show_error && 
                 <div className="inset-0 absolute">
                     <div className="flex container mx-auto w-4/5 relative z-10 flex items-center pt-4">
-                        <div class="w-full bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                            {/* <strong class="font-bold">Holy smokes!</strong> */}
-                            <span class="block sm:inline">You don't have that many points left!</span>
-                            <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onClick={() => this.setState({ show_error: false })}>
-                                <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
-                            </span>
-                        </div>
+                        {this.state.not_enough_points && <NotEnoughPointsError/>}
+                        {this.state.select_all_error && <CompleteAllOptionsError/>}
                     </div>
                 </div>
                 }
@@ -109,9 +95,9 @@ class Formpage extends React.Component {
                             <div className="flex items-start items-stretch justify-between">
                                 <div className="flex hidden lg:block shadow-lg relative w-80">
                                     <div className="bg-white h-full dark:bg-gray-700">
-                                        <div className="pt-6 ml-6">
-                                            <p className="text-sm w-max text-gray-700 dark:text-white font-semibold border-b border-gray-200">Available Points</p>
-                                            <p className="text-4xl text-black dark:text-white font-extrabold my-4">{this.state.available_points - this.state.acquired_points}</p>
+                                        <div className="pt-6 pl-6 pr-6">
+                                            <p className="text-sm w-max text-gray-700 dark:text-white font-semibold border-gray-200 mb-2">Available Points</p>
+                                            <p className="text-4xl text-white font-extrabold mb-4 bg-purple-500 p-3 text-center rounded-md">{this.state.available_points - this.state.acquired_points}</p>
                                         </div>
                                         <nav className="mt-6">
                                             <div className="pl-6 mb-4">
@@ -130,9 +116,14 @@ class Formpage extends React.Component {
                                             </div>
                                         </nav>
                                         <div className="ml-6 py-4">
-                                            {this.formIsComplete ? 
-                                            <a href="/app" className="bg-blue-600 text-white py-2 px-4 text-xs hover:bg-black font-bold uppercase rounded-sm">Complete</a> :
-                                            <span disabled={true} className="bg-gray-800 text-white py-2 px-4 text-xsfont-bold uppercase rounded-sm">Complete</span>
+                                            {this.formIsComplete() ? 
+                                            <a href={this.getPath()} className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white py-2 px-4 text-xs font-bold uppercase rounded-sm">Complete</a> :
+                                            <span onClick={() => {
+                                                this.setState({ show_error: true, select_all_error: true });
+                                                setTimeout(() => {
+                                                    this.setState({ show_error: false, select_all_error: false });
+                                                }, 2000)
+                                            }} className="bg-gray-800 text-white py-2 px-4 text-xs font-bold uppercase rounded-sm cursor-default">Complete</span>
                                             }
                                         </div>
                                     </div>
