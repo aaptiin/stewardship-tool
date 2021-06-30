@@ -6,15 +6,18 @@
     "options" : [
       {
         "name": "Single point of data access",
-        "points": 5
+        "points": 5,
+        "result": "The steward will collate data from different sources, and draw insights to share with multiple stakeholders. The steward will need to actively seek data collaborations between varied stakeholders. Data access remains centralised and will need collaboration. Affiliation of the steward will be important: checks and balances may be needed if controlled by a state body or significant platforms."
       },
       {
         "name": "Define and implement formats and standards for storing and sharing data",
-        "points": 10
+        "points": 10,
+        "result": "The steward will ensure all data is available in shareable formats, according to widely accepted industry standards. The steward will advocate for interoperability with stakeholders, increasing scope for sharing and collaboration. The initiative to collate and make data usable will benefit the entire data value chain by reducing their costs of cleaning data. This will benefit the larger ecosystem - by implemeting standards for interoperability and encouraging third parties to innovate on data."
       },
       {
         "name": "Purposes led standards for data sharing with a focus on protection",
-        "points": 15
+        "points": 15,
+        "result": "The steward will have clearly defined rules of access for third parties. These may be role-based restrictions which make data available only to a cetain class of requestors, or have purpose-based restrictions, based on how data would be used by requestors. Further, the steward may also go beyond implementing interoperability in its own activities, and advocate for interoperability amongst stakeholders, in the interest of users and the larger ecosystem. Bottom-up measures toward interoperability brings down regulatory burdens. It gives users agency over who uses their data and to what end, enhancing trust in the steward in the wider the community."
       }
     ]
   },
@@ -25,15 +28,18 @@
     "options" : [
       {
         "name": "Self-assess internal practices, norms, security pertaining to data",
-        "points": 5
+        "points": 5,
+        "result": "The steward will guarantee only the minimum of legal requirements on transparency. For instance, basic data protection rules will require stewards to publish audit reports. Non-compliance can harm the trustworthiness of the steward, leading ot losses in engagement from users and requestors."
       },
       {
         "name": "Engage external data auditor for periodic evaluation",
-        "points": 10
+        "points": 10,
+        "result": "Going beyong minimal compliance requirements, the steward will conduct external audits and publish periodic audit reports. As part of trust-building measures, the steward should also communicate the findings of these audit to key stakeholders, and take action as recommended by these reports and its users."
       },
       {
         "name": "Conduct comprehensive audits by internal and external entities",
-        "points": 15
+        "points": 15,
+        "result": "Maximal transparency measures on behalf of the steward will include periodic audit and publishing of results, communicating them to stakeholders; tracking practices with reports on improvements and any changes; and keeping communication open with stakeholders in both difrections. Part of this process is onlt transparency of information but also building user and community engagement with the steward, so that any concerns and greivances are communicated at minimal transaction costs to the user. Running an efficient data stewarding operation lessens the regulatory burden on authorities dealing with misuse of data. It also earns the steward positive reputation amongst stakeholders, letting the steward maintain and grow its userbase"
       }
     ]
   },
@@ -44,15 +50,18 @@
     "options" : [
       {
         "name": "Vague commitment to public value and user agency",
-        "points": 5
+        "points": 5,
+        "result": "Incentives from bad actors and external interests may render stewards ineffective in stewarding user interests. The steward may face obstacles in protecting users and enforcing their preferences while depending on third parties. Stewards may only find requestors who wish to access data on explotative terms, and without means to implement any purpose limitation or permission control. While stewards may enforce explicit user consent, protecting users against harm from data sharing will prove difficult and unsustainable."
       },
       {
         "name": "Disclosure on funding and financial sustainability – highlight any possible conflicts",
-        "points": 10
+        "points": 10,
+        "result": "Good practices on incentive structure will require a level of transparency. The steward may disclose business model of steward to its members/data donors. This communication maximises trust, as users will avoid exploitative stewards dealing with data requestors. The steward will need to find revenue sources that do not require data maximisation. While providing value-added services, these must not depend on prvoding community-level insights, as this opens significant possibility for harm."
       },
       {
         "name": "Create alignment to interests of users with accountabilit",
-        "points": 15
+        "points": 15,
+        "result": "Good practices on incentive strcutres require transparency of funding, and revenue sources that do not depend on maximising data exploitation. Stewards seking to maximise user trust will demonstrate alignment with user interests. This is easier in some cases where the steward is based in the community itself, as in cooperatives. This lets users have direct or representative decision making power, at varying levels o granularity and frequency. Proximity of users also ensures accountability and avoidance of perverse incentives, and this minismises any harm."
       }
     ]
   },
@@ -63,15 +72,18 @@
     "options" : [
       {
         "name": "Create of an office for grievance redressal",
-        "points": 5
+        "points": 5,
+        "result": "At the level of the starter, a steward creates an office for grievance redressal. The officer is assigned clear roles and responsibilities as well as authority to act on complaints. However, grievance redressal processes are limited to meeting compliance obligations. Stewards may not be accountable to communities for their decisions on sharing data, limiting their effectiveness and increasing possibilities of causing harm to communities. "
       },
       {
         "name": "Open channels of communication with end-users",
-        "points": 10
+        "points": 10,
+        "result": "In this confuguration, the steward is concerned with creating trust among user communities. Accordingly, the steward institutes channels for open communication between itself and the broader community it represents to ensure decision-making is informed by their preferences. Creating feedback loops and priotising informed consent is an important feature of an medium steward. Further, communities are consulted on any possible modifications to terms of data use. But, a significant drawback is the absnece of internal mechanisms within the stewarding enitity to raise grievances against its representative."
       },
       {
         "name": "Consistent engagement and partnership with community – systematic grievance redressal process",
-        "points": 15
+        "points": 15,
+        "result": "Steward creates a functional accountability process that is easily accessible to impacted stakeholders - whether they are data donors or end-users/data requestors. A robust system of accountability establoshed by the steward will involve data generators - both individuals and communtiies - decison-making processes. Their active participation ensures that the actions of the steward are truly aligned with the chosen and expressed interests of the representative community."
       }
     ]
   },
@@ -82,15 +94,18 @@
     "options" : [
       {
         "name": "Data monetisation to sustain the data steward",
-        "points": 5
+        "points": 5,
+        "result": "Primary source of revenue for the steward is data monetisation. Users are incentivise to share data with the steward to solely derive monetary value. The ability to use data for social benefit, ex:research, is ignored by the steward and users alike. The steward may ensure transparency of pricing of data to users and create buy-in for data transactions. However, the stewards reamins financially unstable due to its over-reliance on monetisation which is the sole source of revenue."
       },
       {
         "name": "Data monetisation for public value e.g. selling data to municipalities for resource planning",
-        "points": 10
+        "points": 10,
+        "result": "The steward prioritises public value as a goal of data monetisation. User data is shared at a cost to contibute to socially beneficial endeavours. Ex: Selling data to municipalities for resource planning. Incentive for data sharing extend beyond monetary considerations to include public value created by data. Further, users participate in monetisation decisions. At the medium level, the steward continues to depend on monetisation as a source of stability. In the absence of a buyer for its data, the stewarding enitity will be precarious. "
       },
       {
         "name": "Membership based remuneration for stewards",
-        "points": 15
+        "points": 15,
+        "result": "The steward follows a subscription-based model where membership fee paid by users constitutes its primary source of revenue. All activities are aligned with user interests and data sharing decisions are completely user-driven. Incentives for data sharing are dtermined internally by users while the steward functions as their fiduciary agent. Financial sustainability is independent of avenues for data monetisation. However, the requirement of a membership fee for this model may run the risk of exlcuding users who cannot afford it or are not inclined to pay for it."
       }
     ]
   },
@@ -101,15 +116,18 @@
     "options" : [
       {
         "name": "Stated community purpose however, vague terms of representing user",
-        "points": 5
+        "points": 5,
+        "result": "The terms of association between the steward and the community is vague such that quality of representation suffers and the steward can cause harm to communities. Consequently, steward's activities may not be aligned with community needs and interests. The steward makes final decisions on third party collaborations and role of communities is limited to providing/revoking consent at the level of the starter. This presents limited value and engagement opportunties for communities."
       },
       {
         "name": "Stated community purpose with open channels of engagement with communities",
-        "points": 10
+        "points": 10,
+        "result": "The steward maintains an open channel of communication with members of the community it represents. However, the scope for collaboration is limited and targetted towards specific partnerships or proposals. Community is involved, but not actively engaged by the steward. Community benefit is defined by the steward, as the community itself plays a mere consultative role in decision-making. Steward also retains control over decisions on third party access, unlike the advanced level of community engagement where they participate in these decisions. "
       },
       {
         "name": "Active engagement with community members to define and translate their preference on societal benefits",
-        "points": 15
+        "points": 15,
+        "result": "The steward will empower communities with optimal decision-making power and representation in data sharing decisions. Decisions on third party partnerships and access to data are user-driven at the level of an advanced steward. In this configuration, communities are central to the decisions of the steward. Community agency, participation and possible value derived from data are maximised.  "
       }
     ]
   }
