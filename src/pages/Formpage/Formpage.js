@@ -70,10 +70,9 @@ class Formpage extends React.Component {
     }
     getPath() {
         let path = '/results/'
-        this.state.steps_taken.map(step => function(){
+        this.state.steps_taken.map((step) => 
             path = `${path}${step["option_selected"]}`
-            return;
-        })
+        )
         return path
     }
     render() {
