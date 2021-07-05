@@ -31,10 +31,10 @@ const Rulepage = () => {
                     To modify your previous answer, use the back button
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-between relative max-w-lg md:max-w-4xl text-center items-center text-md mt-6">
-                        <a href="/" className="flex flex-col bg-white hover:bg-blue-600 py-3 px-16 text-lg text-blue hover:text-white font-bold uppercase rounded-sm">
+                        <a href="/" className="flex flex-col bg-white hover:bg-blue-600 py-3 px-16 text-lg text-blue hover:text-white font-bold uppercase rounded-sm cursor-pointer">
                             Back
                         </a>
-                        <a href="/app" className="flex flex-col bg-white hover:bg-blue-600 py-3 px-16 text-lg text-blue hover:text-white font-bold uppercase rounded-sm">
+                        <a href="/app" className="flex flex-col bg-white hover:bg-blue-600 py-3 px-16 text-lg text-blue hover:text-white font-bold uppercase rounded-sm cursor-pointer">
                             Proceed
                         </a>
                     </div>

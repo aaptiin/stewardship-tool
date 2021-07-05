@@ -31,7 +31,7 @@ class Formpage extends React.Component {
         return data[key].options[option].points
     }
     getState(key) {
-        return `w-full flex items-center pl-6 p-1 mb-1 cursor-pointer transition-colors duration-200 justify-start border-l-4 ${key === this.state.current_step ? `border-blue-500 text-gray-800 dark:text-white` : `hover:text-gray-800 border-transparent text-gray-400`}`     
+        return `w-full flex items-center pl-6 p-1 mb-1 transition-colors duration-200 justify-start border-l-4 ${key === this.state.current_step ? `border-blue-500 text-gray-800 dark:text-white` : `hover:text-gray-800 border-transparent text-gray-400`}`     
     }
     async answer(key) {
         let new_steps_taken = [...this.state.steps_taken]
@@ -74,6 +74,22 @@ class Formpage extends React.Component {
             path = `${path}${step["option_selected"]}`
         )
         return path
+    }
+    getNextStep(){
+        if((this.state.current_step < data.length - 1) && (this.state.steps_taken[this.state.current_step].answered)) {
+            this.setState({ current_step: this.state.current_step + 1 })
+        }
+        else {
+            return;
+        }
+    }
+    getPreviousStep(){
+        if((this.state.current_step > 0)) {
+            this.setState({ current_step: this.state.current_step - 1 })
+        }
+        else {
+            return;
+        }
     }
     render() {
         return (
@@ -138,16 +154,15 @@ class Formpage extends React.Component {
                                             )}
                                         </div>
                                         <div className="flex flex-col md:flex-row gap-4 justify-between relative max-w-lg md:max-w-4xl text-center items-center text-md mt-6">
-                                            <span className="flex flex-col bg-white hover:bg-blue-600 py-3 px-16 text-xs text-blue hover:text-white font-bold uppercase rounded-sm">
+                                            <span onClick={() => this.getPreviousStep()} className="flex flex-col bg-white hover:bg-blue-600 py-3 px-16 text-xs text-blue hover:text-white font-bold uppercase rounded-sm cursor-default">
                                                 Back
                                             </span>
-                                            <span className="flex flex-col bg-white hover:bg-blue-600 py-3 px-16 text-xs text-blue hover:text-white font-bold uppercase rounded-sm">
+                                            <span onClick={() => this.getNextStep()} className="flex flex-col bg-white hover:bg-blue-600 py-3 px-16 text-xs text-blue hover:text-white font-bold uppercase rounded-sm cursor-default">
                                                 Next
                                             </span>
                                         </div>
                                     </div>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>

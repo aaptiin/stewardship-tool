@@ -3,15 +3,15 @@ import React from 'react'
 const DesktopAlertPopup = ({ hidePopup }) => {
     return (
         <div className="flex container rounded-lg overflow-hidden w-full relative z-10 flex justify-center">
-            <div class="bg-white rounded-lg z-50">
-                <div class="w-96 rounded-lg text-center">
-                    <h3 class="pt-8 font-bold text-blue-700">Hello there!</h3>
-                    <p class="py-4 text-sm text-gray-400">This application is in beta testing, for experiencing this application in it's best form we advise you to use your laptop only.</p>
+            <div className="bg-white rounded-lg z-50">
+                <div className="w-96 rounded-lg text-center">
+                    <h2 className="pt-8 text-lg font-bold text-blue-700">Hello there!</h2>
+                    <p className="py-4 text-sm text-gray-400">This application is in beta testing, for experiencing this application in it's best form we advise you to use your laptop only.</p>
                 </div>
 
-                <div class="p-4 flex space-x-4">
-                    <span class="w-1/5"></span>
-                    <span onClick={() => hidePopup()} lass="w-1/2 px-4 py-3 text-center text-white bg-blue-600 rounded-lg hover:bg-blue-900 font-bold text-sm">Okey dokey</span>
+                <div className="p-4 flex space-x-4">
+                    <span className="w-1/5"></span>
+                    <span onClick={() => hidePopup()} className="w-1/2 px-4 py-3 text-center text-white bg-blue-600 rounded-lg hover:bg-blue-900 font-bold text-sm cursor-pointer">Okey dokey</span>
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@ class Homepage extends React.Component {
                                     <p className="flex flex-col max-w-lg md:max-w-4xl text-center items-center text-md mt-6 ">The SEG helps organisations or potential stewards assess their position on the stewardship ladder. Transitioning into stewardship involves several processes and considered trade-offs to be made among different features</p>
                                     <p className="flex flex-col max-w-lg md:max-w-4xl text-center items-center text-md mt-6 ">To realise this, our guide provides a review of organisational data practices and priorities. You can also explore mechanisms to readily pilot some of the features within your organisation. </p>
                                     <p className="flex flex-col max-w-lg md:max-w-4xl text-center items-center text-md">
-                                        <span href="/rules" className="hover:bg-black bg-blue-900 py-3 px-16 text-lg text-white font-bold uppercase rounded-sm mt-10 text-center">Start</span>
+                                        <a href="/rules" className="hover:bg-black bg-blue-900 py-3 px-16 text-lg text-white font-bold uppercase rounded-sm mt-10 text-center cursor-pointer">Start</a>
                                     </p>
                                 </div>
                             </div>

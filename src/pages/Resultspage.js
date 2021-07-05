@@ -4,11 +4,11 @@ import { withRouter } from 'react-router-dom'
 
 class Resultspage extends React.Component {
     getTagColor(points) {
-        const def = `rounded-full p-2 px-4 text-white text-xs`
+        const def = `rounded-full p-2 px-4 text-xs`
         switch(points) {
-            case 5: return `${def} bg-red-700`;
-            case 10: return `${def} bg-yellow-700`;
-            case 15: return `${def} bg-green-700`;
+            case 5: return `${def} bg-red-400`;
+            case 10: return `${def} bg-yellow-400`;
+            case 15: return `${def} bg-green-400`;
             default: return def
         }
     }
