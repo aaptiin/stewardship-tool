@@ -1,10 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:ital,wght@0,300;0,700;1,300&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Open Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-variant-numeric: lining-nums;
+  -moz-font-feature-settings: 'salt' on;
+  -moz-font-feature-settings: "salt on";
+  -ms-font-feature-settings: 'salt' on;
+  -o-font-feature-settings: 'salt' on;
+  -webkit-font-feature-settings: 'salt' on;
+  font-feature-settings: 'salt' on;
+  margin: 0
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 code {
