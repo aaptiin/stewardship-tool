@@ -115,14 +115,14 @@ class Formpage extends React.Component {
                                             </div>
                                         </nav>
                                         <div className="ml-6 py-4">
-                                            {this.formIsComplete() ? 
-                                            <a href={this.getPath()} className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white py-2 px-4 text-xs font-bold uppercase rounded-sm">Complete</a> :
-                                            <span onClick={() => {
-                                                this.setState({ show_error: true, select_all_error: true });
-                                                setTimeout(() => {
-                                                    this.setState({ show_error: false, select_all_error: false });
-                                                }, 2000)
-                                            }} className="bg-gray-800 text-white py-2 px-4 text-xs font-bold uppercase rounded-sm cursor-default">Complete</span>
+                                            {this.formIsComplete() && 
+                                            <a href={this.getPath()} className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white py-2 px-4 text-xs font-bold uppercase rounded-sm">Complete</a> 
+                                            // : <span onClick={() => {
+                                            //     this.setState({ show_error: true, select_all_error: true });
+                                            //     setTimeout(() => {
+                                            //         this.setState({ show_error: false, select_all_error: false });
+                                            //     }, 2000)
+                                            // }} className="bg-gray-800 text-white py-2 px-4 text-xs font-bold uppercase rounded-sm cursor-default">Complete</span>
                                             }
                                         </div>
                                     </div>
