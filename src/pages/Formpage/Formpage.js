@@ -104,7 +104,7 @@ class Formpage extends React.Component {
                                             </div>
                                             <div>
                                                 {data.map((step, index) =>                                            
-                                                <p className={this.getState(index)} key={index} onClick={() => this.changeState(index)}>
+                                                <p className={this.getState(index)} key={index}>
                                                     <span className="mr-2 text-sm font-normal">{step.short}</span>
                                                     {this.state.steps_taken[index]["answered"] &&
                                                     <span className="p-1 text-center ml-2 rounded-lg bg-blue-200 text-xs">
