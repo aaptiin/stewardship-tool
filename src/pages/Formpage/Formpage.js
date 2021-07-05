@@ -132,11 +132,18 @@ class Formpage extends React.Component {
                                     <div className="overflow-auto h-full pb-24 p-4 md:p-6">
                                         <h1 className="text-3xl font-bold text-blue-800 dark:text-white pb-2">Attribute {this.state.current_step + 1}</h1>
                                         <h2 className="text-xl font-bold text-gray-800 dark:text-white pb-2">{data[this.state.current_step].name}</h2>
-                                        <h3 className="text-sm text-gray-600">{data[this.state.current_step].description}</h3>
                                         <h3 className="text-sm text-gray-600">{data[this.state.current_step].game_description}</h3>
                                         <div className="grid grid-cols-1 gap-4 my-4">
                                             {data[this.state.current_step].options.map((option, index) =>                                            <OptionButton option={option} key={index} submitAnswer={() => this.answer(index)} isActive={this.checkIfOptionIsActive(index)} />
                                             )}
+                                        </div>
+                                        <div className="flex flex-col md:flex-row gap-4 justify-between relative max-w-lg md:max-w-4xl text-center items-center text-md mt-6">
+                                            <span className="flex flex-col bg-white hover:bg-blue-600 py-3 px-16 text-xs text-blue hover:text-white font-bold uppercase rounded-sm">
+                                                Back
+                                            </span>
+                                            <span className="flex flex-col bg-white hover:bg-blue-600 py-3 px-16 text-xs text-blue hover:text-white font-bold uppercase rounded-sm">
+                                                Next
+                                            </span>
                                         </div>
                                     </div>
                                 </div>

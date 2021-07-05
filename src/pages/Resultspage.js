@@ -13,13 +13,14 @@ class Resultspage extends React.Component {
         }
     }
     render() {
-        const { results, history } = this.props
+        const { results } = this.props
         return (
             <div className="flex items-center justify-between bg-blue-500 relative py-4">
                 <div className="flex container mx-auto w-4/5 relative z-10 flex items-center">
                     <div className="w-full flex flex-col items-center justify-between relative z-10">
                         <div className="bg-blue-900 dark:bg-gray-800 overflow-hidden w-full relative pb-24 p-4 md:p-6 mb-4 rounded-lg">
                             <h1 className="text-3xl text-center font-bold text-white dark:text-white">Results</h1>
+                            <h1 className="text-3xl text-center font-bold text-white dark:text-white">Your responses indicate that you have picked x 'advanced features', y 'medium features' and z 'starter features'. You have chosen to optimise for *insert variable x* while building a steward. Please find below an explanation of your choices and what it could mean for your organisational goals:</h1>
                         </div>
                         {data.map((step, index) =>                                            
                         <div className="bg-gray-100 dark:bg-gray-800 overflow-hidden w-full relative pb-24 p-4 md:p-6 mb-4 rounded-lg" key={index}>

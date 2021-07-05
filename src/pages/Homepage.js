@@ -10,8 +10,8 @@ const DesktopAlertPopup = ({ hidePopup }) => {
                 </div>
 
                 <div class="p-4 flex space-x-4">
-                    <a class="w-1/5"></a>
-                    <a onClick={() => hidePopup()} href="#" class="w-1/2 px-4 py-3 text-center text-white bg-blue-600 rounded-lg hover:bg-blue-900 font-bold text-sm">Okey dokey</a>
+                    <span class="w-1/5"></span>
+                    <span onClick={() => hidePopup()} lass="w-1/2 px-4 py-3 text-center text-white bg-blue-600 rounded-lg hover:bg-blue-900 font-bold text-sm">Okey dokey</span>
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@ class Homepage extends React.Component {
                                     <p className="flex flex-col max-w-lg md:max-w-4xl text-center items-center text-md mt-6 ">The SEG helps organisations or potential stewards assess their position on the stewardship ladder. Transitioning into stewardship involves several processes and considered trade-offs to be made among different features</p>
                                     <p className="flex flex-col max-w-lg md:max-w-4xl text-center items-center text-md mt-6 ">To realise this, our guide provides a review of organisational data practices and priorities. You can also explore mechanisms to readily pilot some of the features within your organisation. </p>
                                     <p className="flex flex-col max-w-lg md:max-w-4xl text-center items-center text-md">
-                                        <a href="/rules" className="hover:bg-black bg-blue-900 py-3 px-16 text-lg text-white font-bold uppercase rounded-sm mt-10 text-center">Start</a>
+                                        <span href="/rules" className="hover:bg-black bg-blue-900 py-3 px-16 text-lg text-white font-bold uppercase rounded-sm mt-10 text-center">Start</span>
                                     </p>
                                 </div>
                             </div>
