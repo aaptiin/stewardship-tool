@@ -133,6 +133,7 @@ class Formpage extends React.Component {
                                         <h1 className="text-3xl font-bold text-blue-800 dark:text-white pb-2">Step {this.state.current_step + 1}</h1>
                                         <h2 className="text-xl font-bold text-gray-800 dark:text-white pb-2">{data[this.state.current_step].name}</h2>
                                         <h3 className="text-sm text-gray-600">{data[this.state.current_step].description}</h3>
+                                        <h3 className="text-sm text-gray-600">{data[this.state.current_step].game_description}</h3>
                                         <div className="grid grid-cols-1 gap-4 my-4">
                                             {data[this.state.current_step].options.map((option, index) =>                                            <OptionButton option={option} key={index} submitAnswer={() => this.answer(index)} isActive={this.checkIfOptionIsActive(index)} />
                                             )}

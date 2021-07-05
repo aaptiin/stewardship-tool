@@ -2,6 +2,7 @@
   {
     "name": "Availability of reliable, quality and usable datasets",
     "short": "Availability",
+    "game_description":"What is your organization's role in making data accessible and portable? Select one of options below that best suit your future goals as a steward.",
     "description": "Reliable datasets build value for stakeholders – data stewards are critical to the data value chain as they make quality data available",
     "options" : [
       {
@@ -24,6 +25,7 @@
   {
     "name": "Data audits, ethics and assessment",
     "short": "Audits",
+    "game_description":"How does your organisation ensure security and inclusivity of its data practices?",
     "description": "Audit of data sharing practices is necessary to help stakeholders remain apprised of risks. Ensures a degree of transparency on the practices of stewards",
     "options" : [
       {
@@ -46,6 +48,7 @@
   {
     "name": "Clear incentive structure",
     "short": "Incentive",
+    "game_description":"What are the checks and balances in place within the organisation to uphold user interests' over data?",
     "description": "While stewards are expected to work in the interest of users – incentives (monetary and otherwise) need to align to ensure there is no malpractice. Conflicting interests make beneficial data sharing near impossible.",
     "options" : [
       {
@@ -68,6 +71,7 @@
   {
     "name": "Accountability and grievance redressal",
     "short": "Accountability",
+    "game_description":"How does your organisation inculcate trust in the process of data sharing among the user community?",
     "description": "An effective grievance redressal system is the most valuable feature for increasing trust in a steward - accessibility and usability of the process is key to achieving this",
     "options" : [
       {
@@ -90,6 +94,7 @@
   {
     "name": "Financial sustainability",
     "short": "Finance",
+    "game_description":"What are the revenue models employed by your organisation?",
     "description": "Financial sustainability is key for the independence of the steward. Revenue models are experimental, and many stewards are at the stage of incubation rather than self-sustaining structures",
     "options" : [
       {
@@ -112,6 +117,7 @@
   {
     "name": "Community-centered purpose",
     "short": "Purpose",
+    "game_description":"How does your organisation respect rights of individuals and communities over their data?",
     "description": "Centering the community is a crucial touchstone for stewardship. Ensuring that community purpose translates to practices of the steward is important “good stewardship”",
     "options" : [
       {
