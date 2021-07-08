@@ -16,9 +16,9 @@ class OptionButton extends React.Component {
         const { option } = this.props
         const def = `rounded-full relative p-2 text-xl text-white font-bold -ml-2 mr-4 h-12 w-12 text-center`
         switch(option.points) {
-            case 5: return `${def} bg-red-800`;
-            case 10: return `${def} bg-yellow-800`;
-            case 15: return `${def} bg-green-800`;
+            case 5: return `${def} bg-red-600`;
+            case 10: return `${def} bg-yellow-600`;
+            case 15: return `${def} bg-green-600`;
             default: return def
         }
     }
