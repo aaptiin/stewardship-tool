@@ -40,7 +40,7 @@ class ResultsCard extends React.Component {
         const { results } = this.props
         this.getMajority()
         return (
-            <div className="flex items-center justify-between bg-gray-200 relative py-4">
+            <div className="flex items-center justify-between bg-blue-100 relative py-4">
                 <div className="flex container mx-auto w-4/5 relative z-10 flex items-center">
                     <div className="w-full flex flex-col items-center justify-between relative z-10">
                         <div className="bg-blue-900 dark:bg-gray-800 overflow-hidden w-full relative pb-24 p-4 md:p-6 mb-4 rounded-lg">

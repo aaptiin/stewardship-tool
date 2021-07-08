@@ -94,7 +94,7 @@ class Formpage extends React.Component {
     }
     render() {
         return (
-            <div className="flex items-center justify-between bg-gray-200 relative overflow-hidden h-screen py-4">
+            <div className="flex items-center justify-between bg-blue-100 relative overflow-hidden h-screen py-4">
                 {this.state.show_error && 
                 <div className="inset-0 absolute">
                     <div className="flex container mx-auto w-4/5 relative z-10 flex items-center pt-4">
@@ -103,9 +103,9 @@ class Formpage extends React.Component {
                     </div>
                 </div>
                 }
-                <div className="flex container border-4 border-white rounded-lg mx-auto w-4/5 relative z-10 flex items-center">
+                <div className="flex container rounded-lg mx-auto w-4/5 relative z-10 flex items-center">
                     <div className="w-full flex flex-col items-center justify-between relative z-10">
-                        <div className="bg-gray-100 dark:bg-gray-800 overflow-hidden w-full relative">
+                        <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden w-full relative">
                             <div className="flex items-start items-stretch justify-between">
                                 <div className="flex hidden lg:block shadow-lg relative w-80">
                                     <div className="bg-white h-full dark:bg-gray-700">
