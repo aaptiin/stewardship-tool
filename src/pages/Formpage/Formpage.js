@@ -2,6 +2,7 @@ import React from 'react'
 import data from 'assets/data.json'
 import OptionButton from './OptionButton';
 import { NotEnoughPointsError, CompleteAllOptionsError } from './Errors'
+import { withRouter } from 'react-router-dom'
 
 class Formpage extends React.Component {
     state = {
@@ -15,6 +16,9 @@ class Formpage extends React.Component {
         show_error: false,
         not_enough_points_error: false,
         select_all_error: false
+    }
+    getCompletedSteps() {
+        return this.state.steps_taken.reduce((a, v) => (v["answered"] ? a + 1 : a), 0)
     }
     async getCurrentPoints(new_steps) {
         let points = 0;
@@ -75,27 +79,22 @@ class Formpage extends React.Component {
         )
         return path
     }
+    canGetOnNextStep(){
+        return this.state.steps_taken[this.state.current_step].answered
+    }
+    canGetOnPreviousStep(){
+        return this.state.current_step > 0
+    }
     getNextStep(){
-        if((this.state.current_step < data.length - 1) && (this.state.steps_taken[this.state.current_step].answered)) {
-            this.setState({ current_step: this.state.current_step + 1 })
-        }
-        else {
-            return;
-        }
+        console.log(this.formIsComplete())
+        return this.formIsComplete() ? this.props.history.push(this.getPath()) : this.canGetOnNextStep() ? this.setState({ current_step: this.state.current_step + 1 }) : null
     }
     getPreviousStep(){
-        if((this.state.current_step > 0)) {
-            this.setState({ current_step: this.state.current_step - 1 })
-        }
-        else {
-            return;
-        }
+        return this.canGetOnPreviousStep() ? this.setState({ current_step: this.state.current_step - 1 }) : this.props.history.push('/rules')
     }
     render() {
         return (
-            <div className="flex items-center justify-between bg-blue-500 relative overflow-hidden h-screen py-4">
-                <div className="inset-0 bg-black opacity-25 absolute">
-                </div>
+            <div className="flex items-center justify-between bg-gray-200 relative overflow-hidden h-screen py-4">
                 {this.state.show_error && 
                 <div className="inset-0 absolute">
                     <div className="flex container mx-auto w-4/5 relative z-10 flex items-center pt-4">
@@ -116,7 +115,7 @@ class Formpage extends React.Component {
                                         </div>
                                         <nav className="mt-6">
                                             <div className="pl-6 mb-4">
-                                                <p className="text-sm w-max text-gray-700 dark:text-white font-semibold border-b border-gray-200">Steps</p>
+                                                <p className="text-sm w-max text-gray-700 dark:text-white font-semibold">Steps <span className="p-1 text-center ml-2 rounded-lg bg-blue-200 text-xs">{this.getCompletedSteps()}/{data.length}</span></p>
                                             </div>
                                             <div>
                                                 {data.map((step, index) =>                                            
@@ -130,17 +129,6 @@ class Formpage extends React.Component {
                                                 )}
                                             </div>
                                         </nav>
-                                        <div className="ml-6 py-4">
-                                            {this.formIsComplete() && 
-                                            <a href={this.getPath()} className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white py-2 px-4 text-xs font-bold uppercase rounded-sm">Complete</a> 
-                                            // : <span onClick={() => {
-                                            //     this.setState({ show_error: true, select_all_error: true });
-                                            //     setTimeout(() => {
-                                            //         this.setState({ show_error: false, select_all_error: false });
-                                            //     }, 2000)
-                                            // }} className="bg-gray-800 text-white py-2 px-4 text-xs font-bold uppercase rounded-sm cursor-default">Complete</span>
-                                            }
-                                        </div>
                                     </div>
                                 </div>
                                 
@@ -153,13 +141,13 @@ class Formpage extends React.Component {
                                             {data[this.state.current_step].options.map((option, index) =>                                            <OptionButton option={option} key={index} submitAnswer={() => this.answer(index)} isActive={this.checkIfOptionIsActive(index)} />
                                             )}
                                         </div>
-                                        <div className="flex flex-col md:flex-row gap-4 justify-between relative max-w-lg md:max-w-4xl text-center items-center text-md mt-6">
-                                            <span onClick={() => this.getPreviousStep()} className="flex flex-col bg-white hover:bg-blue-600 py-3 px-16 text-xs text-blue hover:text-white font-bold uppercase rounded-sm cursor-default">
-                                                Back
-                                            </span>
-                                            <span onClick={() => this.getNextStep()} className="flex flex-col bg-white hover:bg-blue-600 py-3 px-16 text-xs text-blue hover:text-white font-bold uppercase rounded-sm cursor-default">
-                                                Next
-                                            </span>
+                                        <div className="flex flex-row gap-4 justify-between relative max-w-lg md:max-w-4xl text-center items-center text-md mt-6">
+                                            <button onClick={() => this.getPreviousStep()} className="flex flex-col hover:bg-gray-500 bg-blue-600 py-3 px-16 text-xs hover:text-blue text-white font-bold uppercase rounded-sm cursor-pointer disabled:opacity-50">
+                                                Previous
+                                            </button>
+                                            <button disabled={!this.canGetOnNextStep()} onClick={() => this.getNextStep()} className="flex flex-col hover:bg-gray-500 bg-blue-600 py-3 px-16 text-xs hover:text-blue text-white font-bold uppercase rounded-sm cursor-pointer disabled:opacity-50">
+                                                {this.formIsComplete() ? `Complete` : `Next`}
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -172,4 +160,4 @@ class Formpage extends React.Component {
     }
 }
 
-export default Formpage
+export default withRouter(Formpage)
