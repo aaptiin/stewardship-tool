@@ -1,17 +1,21 @@
 import React from 'react'
+import { AlertCircleOutline } from 'react-ionicons'
 
 const DesktopAlertPopup = ({ hidePopup }) => {
     return (
         <div className="flex container rounded-lg overflow-hidden w-full relative z-10 flex justify-center">
-            <div className="bg-white rounded-lg z-50">
+            <div className="bg-blue-700 rounded-lg z-50">
                 <div className="w-96 rounded-lg text-center">
-                    <h2 className="pt-8 text-lg font-bold text-blue-700">Hello there!</h2>
-                    <p className="py-4 text-sm text-gray-400">This application is in beta testing, for experiencing this application in it's best form we advise you to use your laptop only.</p>
+                    <div className="flex justify-center pt-6 pb-3">
+                        <AlertCircleOutline color={'#FFF'} height="60px" width="60px" />
+                    </div>
+                    <h2 className="text-2xl font-bold text-white">Hello there!</h2>
+                    <p className="p-4 text-sm text-white">This application is in beta testing, for experiencing this application in it's best form we advise you to use your laptop only.</p>
                 </div>
 
                 <div className="p-4 flex space-x-4">
                     <span className="w-1/5"></span>
-                    <span onClick={() => hidePopup()} className="w-1/2 px-4 py-3 text-center text-white bg-blue-600 rounded-lg hover:bg-blue-900 font-bold text-sm cursor-pointer">Okey dokey</span>
+                    <span onClick={() => hidePopup()} className="w-1/2 px-4 py-3 text-center text-white bg-blue-400 rounded-lg hover:bg-blue-900 font-bold text-sm cursor-pointer">Okey dokey</span>
                 </div>
             </div>
         </div>
