@@ -15,7 +15,7 @@ const DesktopAlertPopup = ({ hidePopup }) => {
 
                 <div className="p-4 flex space-x-4">
                     <span className="w-1/5"></span>
-                    <span onClick={() => hidePopup()} className="w-1/2 px-4 py-3 text-center text-white bg-blue-400 rounded-lg hover:bg-blue-900 font-bold text-sm cursor-pointer">Okey dokey</span>
+                    <span onClick={() => hidePopup()} className="w-1/2 px-4 py-3 text-center text-white bg-blue-400 rounded-lg hover:bg-blue-900 font-bold text-sm cursor-pointer">Okay</span>
                 </div>
             </div>
         </div>
