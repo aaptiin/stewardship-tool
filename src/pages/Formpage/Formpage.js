@@ -187,10 +187,10 @@ class Formpage extends React.Component {
                                         <h2 className="text-xl font-bold text-gray-800 dark:text-white pb-2">{data[this.state.current_step].name}</h2>
                                         <h3 className="text-sm text-gray-600">{data[this.state.current_step].game_description}</h3>
                                         <div className="grid grid-cols-1 gap-4 my-4">
-                                            {data[this.state.current_step].options.map((option, index) =>                                            <OptionButton option={option} key={index} submitAnswer={() => this.answer(index)} isActive={this.checkIfOptionIsActive(index)} />
+                                            {data[this.state.current_step].options.map((option, index) => <OptionButton option={option} key={index} submitAnswer={() => this.answer(index)} isActive={this.checkIfOptionIsActive(index)} />
                                             )}
                                         </div>
-                                        <div className="flex flex-row gap-4 justify-between relative max-w-lg md:max-w-4xl text-center items-center text-md mt-6">
+                                        <div className="flex flex-row gap-4 justify-between relative flex text-center items-center text-md mt-6">
                                             <button onClick={() => this.getPreviousStep()} className="flex flex-col hover:bg-gray-500 bg-blue-600 py-3 px-16 text-xs hover:text-blue text-white font-bold uppercase rounded-sm cursor-pointer disabled:opacity-50">
                                                 Previous
                                             </button>
